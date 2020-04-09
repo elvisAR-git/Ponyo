@@ -1,0 +1,22 @@
+{
+  "name": "sideproject",
+  "version": "1.0.0",
+  "description": "inspire",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server/index.js"
+  },
+  "author": "Elvis Moraa",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jshint": "^2.11.0",
+    "mongodb": "^3.5.5",
+    "nodemon": "^2.0.2",
+    "promisify": "0.0.3"
+  }
+}

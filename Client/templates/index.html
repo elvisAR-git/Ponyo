@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideWork</title>
+</head>
+<body>
+    <nav>
+        <h1 class="logotext">Ponyo</h1>
+    </nav>
+    <div class="glow"></div>
+    <div class="showcase">
+        <img src="laptop2.jpg" alt="" class="mainimg">
+        <div class="showcase-info">
+            <h4 class="mono large-text white-text">CODE THE WORLD</h4>
+            <p class="green-text mono2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur nostrum, maiores perspiciatis neque nulla corrupti ipsam nihil perferendis voluptas vero? Maiores suscipit pariatur qui vel laboriosam aperiam temporibus facere. Doloribus.</p>
+        </div>
+    </div>
+    <div class="center-box special">
+        <div class="ruby center-align">
+            <img src="ruby.svg" alt="">
+            <p class="white-text mono2">Ruby</p>
+        </div>
+        <div class="python center-align">
+            <img src="python.svg" alt="">
+            <p class="white-text mono2">Python3</p>
+        </div>
+        <div class="js center-align">
+            <img src="javascript.svg" alt="">
+            <p class="white-text mono2">Javascript</p>
+        </div>
+        <div class="go center-align">
+            <img src="golang.svg" alt="">
+            <p class="white-text mono2">Golang</p>
+        </div>
+    </div>
+<div class="glow"></div>
+    <div class="card-wrapper">
+        <div class="card">
+            <h4 class="mono white-text">>CMD</h4>
+            <pre>
+            <code class="green-text" data-language="python">
+
+import hashlib
+def hash_file(filename): 
+""""This function returns the SHA-1 hash 
+of the file passed into it""" 
+
+# make a hash object 
+h = hashlib.sha1() 
+
+# open file for reading in binary mode 
+with open(filename,'rb') as file: 
+
+    # loop till the end of the file 
+    chunk = 0 
+    while chunk != b'': 
+        # read only 1024 bytes at a time 
+        chunk = file.read(1024) 
+        h.update(chunk) 
+        
+# return the hex representation of digest 
+return h.hexdigest() 
+
+message = hash_file("track1.mp3") 
+print(message) 
+            </code>
+            </pre>
+        </div>
+        <div class="card">
+            <h4 class="mono white-text">>CMD</h4>
+            <p>
+                <pre>
+            <code class="green-text">
+                
+import hashlib
+def hash_file(filename): 
+""""This function returns the SHA-1 hash 
+of the file passed into it""" 
+
+# make a hash object 
+h = hashlib.sha1() 
+
+# open file for reading in binary mode 
+with open(filename,'rb') as file: 
+
+    # loop till the end of the file 
+    chunk = 0 
+    while chunk != b'': 
+        # read only 1024 bytes at a time 
+        chunk = file.read(1024) 
+        h.update(chunk) 
+        
+# return the hex representation of digest 
+return h.hexdigest() 
+
+message = hash_file("track1.mp3") 
+print(message) 
+            </code>
+            </pre>
+            </p>
+        </div>
+        <div class="card">
+            <h4 class="mono white-text">>CMD</h4>
+            <p>
+                <pre>
+            <code class="green-text">
+                
+import hashlib
+def hash_file(filename): 
+""""This function returns the SHA-1 hash 
+of the file passed into it""" 
+
+# make a hash object 
+h = hashlib.sha1() 
+
+# open file for reading in binary mode 
+with open(filename,'rb') as file: 
+
+    # loop till the end of the file 
+    chunk = 0 
+    while chunk != b'': 
+        # read only 1024 bytes at a time 
+        chunk = file.read(1024) 
+        h.update(chunk) 
+        
+# return the hex representation of digest 
+return h.hexdigest() 
+
+message = hash_file("track1.mp3") 
+print(message) 
+            </code>
+            </pre>
+            </p>
+        </div>
+    </div>
+
+    <section class="people">
+        <div class="post">
+            <div class="header">
+                <img src="telecommuting.svg" alt="">
+                <h4>I love Ruby on rails</h4>
+            </div>
+            <div class="controls">
+                
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+<style>
+    .showcase{
+        padding: 2%;
+        display: flex;
+    }
+    .showcase img{
+        width: 40%;
+        flex: 1;
+    }
+    .showcase-info{
+        flex: 2;
+        padding: 1%;
+        margin-left: 5%;
+        border-left: 9px green dotted;
+    }
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        background-color: rgb(28, 28, 36);
+    }
+    nav{
+        text-align: center;
+    }
+    .logotext{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 280%;
+    }
+    .glow{
+        background-color: blue;
+        width: 100%;
+        height: 2px;
+        box-shadow: 1px 2px 3px 9px rgba(0, 0, 255, 0.219);
+    }
+    .mono{
+        font-family: monospace;
+    }
+    .large-text{
+        font-size: 200%;
+    }
+    .white-text{
+        color: white;
+    }
+    .green-text{
+        color: rgb(15, 228, 15);
+    }
+    .mono2{
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .card{
+        padding: 1%;
+        margin-left: 10px;
+        flex: 1;
+        width: min-content;
+        background-image: linear-gradient(rgb(0, 2, 0), rgb(4, 73, 4));
+        border: 1px rgb(0, 255, 0) solid;
+        box-shadow: 1px 2px 2px 2px rgb(0, 89, 255);
+    }
+    .card-wrapper{
+        padding: 2%;
+        display: flex;
+    }
+    .center-box{
+        text-align: center;
+    }
+    .center-align{
+        display: inline-block;
+        padding: 1%;
+    }
+    .special{
+        border: 1px solid green;
+        border-radius: 60px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+</style>
