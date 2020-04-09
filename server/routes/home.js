@@ -50,6 +50,8 @@ router.get('/:filename',(req,res)=>{
                                 res.end()
                             }
                         })
+                    }else{
+                        res.end()
                     }
                 }else{
                     res.writeHead(value.code)
