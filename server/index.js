@@ -1,6 +1,6 @@
 const express  = require("express")
 const app = express()
-var PORT = 4545
+var PORT = 3000
 
 const homeRoutes = require('./routes/home.js')
 const db = require("./api/routes/db.js")
@@ -15,6 +15,6 @@ app.use('/api/', db)
 app.use('/',homeRoutes)
 
 
-app.listen(4545,()=>{
+app.listen(PORT,()=>{
     console.log(`Server running at port ${PORT}`)
 })
