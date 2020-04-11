@@ -1,6 +1,6 @@
 const express = require('express')
-const mongodb = require('mongodb')
 const fs = require('fs')
+const mime = require('mime');
 const os = require('os')
 const MediaRender = new require('./mediaRender')
 console.log("[+] Using MediaRender")
@@ -34,6 +34,7 @@ router.get('/',(req,res)=>{
 })
 router.get('/:filename',(req,res)=>{
     async function fetch(req, res){
+        res.setHeader("Content-Type", mime.getType(req.params.filename))
         var value = await MediaRender.get(req.params.filename)
         .then(
             (value)=>{

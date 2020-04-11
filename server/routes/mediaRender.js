@@ -4,7 +4,14 @@ const util = require('util')
 
 const readFile = util.promisify(fs.readFile)
 
-MEDIA_DIRS = [os.homedir + '/Desktop/SideProject/Client/Images/',os.homedir + '/Desktop/SideProject/Client/Multimedia/',os.homedir + '/Desktop/SideProject/Client/templates/' ]
+
+// add as many as you like
+MEDIA_DIRS = [
+    os.homedir + '/Desktop/SideProject/Client/Images/',
+    os.homedir + '/Desktop/SideProject/Client/Multimedia/',
+    os.homedir + '/Desktop/SideProject/Client/templates/',
+    os.homedir + '/Desktop/SideProject/Client/ARengine/'
+]
 
 
 class MediaRender{

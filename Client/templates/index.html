@@ -261,6 +261,7 @@ print(message)
         margin-right: 5%;
         margin-top: 1%;
         margin-bottom: 1%;
+        border: 1px rgb(73, 255, 2)solid;
     }
     *{
         padding: 0;
@@ -316,6 +317,7 @@ print(message)
     a{
         text-decoration: none;
         color: lightgreen;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
     
@@ -364,7 +366,8 @@ print(message)
         font-size: 200%;
     }
     a:hover{
-        color: greenyellow
+        color: greenyellow;
+        text-decoration: underline;
     }
     .white-text{
         color: white;
@@ -402,3 +405,83 @@ print(message)
         margin-bottom: 20px;
     }
 </style>
+
+<div id="data">
+    <ul id="list">
+        <li>
+            <div class="card">
+                <p class="white-text">${data.text}</p>
+                <p class="white-text mono2">${data.time}</p>
+            </div>
+            <br>
+        </li>
+    </ul>
+</div>
+<div id="content"></div>
+
+<style>
+    #content{
+        height: 400px;
+        overflow: scroll;
+    }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+<div class="card-wrapper">
+    <div class="card">
+        <form action="/api/" method="POST" id="postform">
+            <input type="text" name="text" id="textdata" name="text">
+        </form>
+        <button id="send" onclick="push()">Send</button>
+    </div>
+</div>
+
+<script>
+    function push(){
+        xhr = new XMLHttpRequest()
+        xhr.open("POST","http://localhost:4545/api/", true)
+        xhr.setRequestHeader("contet-Type","application/json;charset=UTF-8")
+        xhr.onload = function(){
+            if (this.status == 200){
+                var response = JSON.parse(this.response).ops[0]
+                li = document.createElement('li')
+                card = document.createElement('div')
+                card.classList.add('card')
+                p = document.createElement('p')
+                p.classList.add("white-text")
+                p2 = document.createElement('p')
+                p2.classList.add("white-text")
+                p2.classList.add("mono2")
+                p.innerHTML = response.text
+                p2.innerHTML = response.time
+                card.appendChild(p)
+                card.appendChild(p2)
+                li.appendChild(card)
+                console.log(card)
+                document.getElementById('content').appendChild(li)
+            }else{
+                console.log("fail")
+            }
+        }
+        var data = {
+            text:document.getElementById("textdata").value
+        }
+        console.log(JSON.stringify(data))
+        xhr.send(JSON.stringify(data))
+    }
+</script>
+
+<script type="module">
+    import Engine from './main.js'
+    var En = Engine['En']
+
+    async function bufferedFetch(){
+        var data = await axios.get('http://localhost:4545/api')
+        var data  = En.run("data",data.data)
+        document.getElementById('content').innerHTML = data
+        document.getElementById('data').remove()
+    }
+    bufferedFetch()
+    
+</script>
