@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <nav>
+        <a href="/">
+            <h1 class="logotext mono">~Ponyo~<pre>"CODE"</pre></h1>
+        </a>
+    </nav>
+<br>
+<div class="tab-layout" id="Tab">
+    <div class="tab-header">
+        <p class="tab-label tab-active" onclick="showCreateTab(this)" id="create">Create Account</p>
+        <p class="tab-label" onclick="showSignTab(this)" id="sign">Sign in instead</p>
+    </div>
+    <ul class="tab-options center-box">
+        <li class="tab-item tab-item-show center-align" id="createTab">
+            <div class="center-box">
+                <p class="white-text mono2 large-text">Join a furum of amazing programmers</p>
+                <hr>
+                <form action="/api/accounts/create/" method="post" class="form center-align">
+                    <input type="email" name="email" id="email" placeholder="email address" class="form-input">
+                    <input type="text" name="username" id="username" placeholder="Username" class="form-input">
+                    <input type="password" name="password" id="password" placeholder="Password" class="form-input">
+                    <input type="submit" value="Create account" class="btn-primary">
+                </form>
+            </div>
+        </li>
+        <li class="tab-item tab-item-hide center-align" id="signTab">
+            <div class="center-box">
+                <p class="white-text mono2 large-text">Already a member, signin!</p>
+                <hr>
+                <form action="/api/accounts/create/" method="post" class="form center-align">
+                    <input type="email" name="email" id="email" placeholder="email address" class="form-input">
+                    <input type="text" name="username" id="username" placeholder="Username" class="form-input">
+                    <input type="password" name="password" id="password" placeholder="Password" class="form-input">
+                    <input type="submit" value="Signin" class="btn-primary">
+                </form>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+
+<script>
+    function showCreateTab(element){
+        document.getElementById("createTab").classList.add("tab-item-show")
+        document.getElementById("signTab").classList.add("tab-item-hide")
+        document.getElementById("signTab").classList.remove("tab-item-show")
+        document.getElementById("Tab").classList.add("tab-item-dark")
+        document.getElementById("Tab").classList.remove("tab-item-light")
+
+        element.classList.add('tab-active')
+        document.getElementById('sign').classList.remove('tab-active')
+    }
+    function showSignTab(element){
+        document.getElementById("createTab").classList.add("tab-item-hide")
+        document.getElementById("createTab").classList.remove("tab-item-show")
+
+        document.getElementById("signTab").classList.add("tab-item-show")
+        document.getElementById("Tab").classList.add("tab-item-light")
+        document.getElementById("Tab").classList.remove("tab-item-dark")
+
+        element.classList.add('tab-active')
+        document.getElementById('create').classList.remove('tab-active')
+    }
+</script>

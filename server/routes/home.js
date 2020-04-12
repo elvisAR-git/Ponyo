@@ -32,6 +32,31 @@ router.get('/',(req,res)=>{
         }
     })
 })
+
+router.get('/accounts', (req,res)=>{
+    fs.readFile(MAIN_DIR + 'account.html',(err, data)=>{
+        if(err){
+            res.writeHead(404)
+            fs.readFile(__dirname +'/404.html', (err2, data2)=>{
+                if(err2){
+                    console.log(err2)
+                    res.write("[404, 500] Fatal Error")
+                    res.end()
+                }else{
+                    console.log(`[+] 200 ---> ${__dirname + "/404.html"}`)
+                    res.write(data2)
+                    res.end()
+                }
+            })
+        }else{
+            console.log(`[+] 200 ---> ${MAIN_DIR + 'account.html'}`)
+            res.writeHead(200)
+            res.write(data)
+            res.end()
+        }
+    })
+})
+
 router.get('/:filename',(req,res)=>{
     // security
     if(req.params.filename == "home.js"){

@@ -10,7 +10,8 @@ MEDIA_DIRS = [
     os.homedir + '/Desktop/SideProject/Client/Images/',
     os.homedir + '/Desktop/SideProject/Client/Multimedia/',
     os.homedir + '/Desktop/SideProject/Client/templates/',
-    os.homedir + '/Desktop/SideProject/Client/ARengine/'
+    os.homedir + '/Desktop/SideProject/Client/ARengine/',
+    os.homedir + '/Desktop/SideProject/Client/CSS/',
 ]
 
 
